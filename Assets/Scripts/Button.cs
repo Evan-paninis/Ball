@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Bonus : MonoBehaviour
+public class Button : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +13,11 @@ public class Bonus : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnRestartClick()
+    {
+        SceneManager.LoadScene(0);
+
     }
 }

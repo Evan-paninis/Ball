@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Obstcales
   - Bonus
+  - Congrats
+  - YouDied
   layers:
   - Default
   - TransparentFX

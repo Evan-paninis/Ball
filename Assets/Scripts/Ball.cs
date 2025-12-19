@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour
     [SerializeField] private float movementForce = 5f;
     [SerializeField] private float movementJump = 5f;
     [SerializeField] private float gluttony;
+    [SerializeField] private GameObject Congrats;
+    [SerializeField] private GameObject YouDied;
     private Rigidbody rb;
     float vInput;
     float hInput;
@@ -56,6 +58,8 @@ public class Ball : MonoBehaviour
         if (transform.localScale.x <= 0)
         {
             Destroy(this.gameObject);
+            YouDied.SetActive(true);
+            
         }
         
     }
@@ -67,6 +71,13 @@ public class Ball : MonoBehaviour
             transform.localScale += new Vector3(gluttony, gluttony, gluttony);
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.CompareTag("Finish"))
+        {
+            Destroy(this.gameObject);
+            Congrats.SetActive(true);
+            
+        }
         
     }
 
@@ -74,6 +85,5 @@ public class Ball : MonoBehaviour
     {
         Gizmos.color = Color.red;
     }
-    
     
 }
